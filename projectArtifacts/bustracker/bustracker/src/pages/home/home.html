@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar class="title" color="secondary">
+    <ion-title>
+      Smart city bus - Location Tracker
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <p class="bluelabel" fixed>Enter the unique Trip ID before starting the trip.</p>
+
+  <p class="bluelabel" fixed>Enable tracking for the Trip ID by clicking Start button.</p>
+
+  <p class="bluelabel" fixed>End the trip by clicking Stop button. </p>
+
+  <ion-item>
+    <ion-label fixed class="bluelabel">Trip Id:</ion-label>
+    <ion-input type="text" [(ngModel)]=locationTracker.txtTrip></ion-input>
+  </ion-item>
+  <ion-item>
+    <button ion-button full primary color="secondary" (click)="start()">Start Tracking</button>
+    <button ion-button full primary color="danger" (click)="stop()">Stop Tracking</button>
+  </ion-item>
+
+  <ion-item>
+    <p class="bluelabel" fixed>Current Latitude: {{locationTracker.lat}}</p>
+    <p class="bluelabel" fixed>Current Longitude: {{locationTracker.lng}}</p>
+    <pre>{{locationTracker.serverRes}}</pre>
+  </ion-item>
+
+</ion-content>
